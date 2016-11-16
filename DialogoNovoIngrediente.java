@@ -22,6 +22,7 @@ public class DialogoNovoIngrediente extends JInternalFrame
     getContentPane().add(panel, BorderLayout.CENTER);
     setSize(300, 300);
     setVisible(true);
+    panel.setLayout(new FlowLayout());
 
     labelNome = new JLabel("Nome");
     panel.add(labelNome);
@@ -33,7 +34,6 @@ public class DialogoNovoIngrediente extends JInternalFrame
     panel.add(textFieldQuantidade);
 
     botaoOk = new JButton("OK");
-    panel.setLayout(new FlowLayout());
     panel.add(botaoOk);
 
     botaoOk.addActionListener(new ActionListener()
@@ -43,7 +43,7 @@ public class DialogoNovoIngrediente extends JInternalFrame
       {
         int quantidade = Integer.parseInt(textFieldQuantidade.getText());
         String nomeIngrediente = textFieldNome.getText();
-        
+
         for (int i=0;i<quantidade;++i)
         {
           controle.criarIngrediente(nomeIngrediente);
