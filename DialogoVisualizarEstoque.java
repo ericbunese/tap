@@ -10,7 +10,7 @@ public class DialogoVisualizarEstoque extends JInternalFrame
   private ControleVisualizarEstoque controle;
   private ControleEstoque controleEstoque;
 
-  public DialogoNovoIngrediente(ControleEstoque controleEstoque)
+  public DialogoVisualizarEstoque(ControleEstoque controleEstoque)
   {
     super("Estoque", true, true, true, true );
 
