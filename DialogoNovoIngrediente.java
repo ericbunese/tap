@@ -22,7 +22,7 @@ public class DialogoNovoIngrediente extends JInternalFrame
     getContentPane().add(panel, BorderLayout.CENTER);
 
     labelNome = new JLabel("Nome");
-    textFieldNome = new JTextField("");
+    textFieldNome = new JTextField("Nome do Ingrediente");
     labelQuantidade = new JLabel("Quantidade");
     textFieldQuantidade = new JTextField("1");
     botaoOk = new JButton("OK");
