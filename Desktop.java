@@ -37,6 +37,7 @@ public class Desktop extends JFrame
      {
        //Novo Ingrediente
        DialogoNovoIngrediente dni = new DialogoNovoIngrediente(controleEstoque);
+       desktop.add(dni);
      }
    });
 
