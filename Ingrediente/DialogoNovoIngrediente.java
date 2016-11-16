@@ -2,7 +2,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-class DialogoNovoIngrediente extends JInternalFrame implements ActionListener
+class DialogoNovoIngrediente extends JInternalFrame
 {
   private JLabel labelNome;
   private JTextField textFieldNome;

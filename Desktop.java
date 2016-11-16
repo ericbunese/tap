@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
 
-public class Desktop extends JFrame implements ActionListener
+public class Desktop extends JFrame
 {
  private JMenuBar barra;
  private JMenu menuAdicionar;
