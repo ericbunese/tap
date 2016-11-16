@@ -27,7 +27,6 @@ public class DialogoVisualizarEstoque extends JInternalFrame
     listaEstoqueScroll = new JScrollPane(listaEstoque);
 
     panel.add(listaEstoqueScroll);
-    panel.pack();
 
     setSize(450, 300);
     setVisible(true);
