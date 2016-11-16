@@ -14,10 +14,13 @@ public class ControleVisualizarEstoque
 
     int pos = 0;
     itensEstoque = new String[ingredientes.size()];
+    System.out.println("VISUALIZAR ESTOQUE");
     for (Ingrediente i:ingredientes)
     {
+      System.out.println(i.toString());
       itensEstoque[pos] = i.toString();
     }
+    System.out.println(".");
   }
 
   public String[] getItensEstoque()
