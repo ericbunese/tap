@@ -12,7 +12,7 @@ public class ControleNovoIngrediente
 
   public void criarIngrediente(String nome)
   {
-    if (nome!=null && nome!="")
+    if (nome!=null && !nome.equals(""))
     {
       if (ingrediente==null)
       {
@@ -32,7 +32,8 @@ public class ControleNovoIngrediente
     {
       controleEstoque.incluirEstoque(ingrediente);
       controleEstoque.salvarEstoque();
-      JOptionPane.showMessageDialog(null, "Ingrediente salvo com sucesso.");
+      System.out.println("Ingrediente adicionado ao estoque.");
+      ingrediente = null;
     }
     else
     {
