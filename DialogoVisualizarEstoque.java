@@ -20,8 +20,7 @@ public class DialogoVisualizarEstoque extends JInternalFrame
     panel = new JPanel();
     getContentPane().add(panel, BorderLayout.CENTER);
 
-    String[] selections = { "green", "red", "orange", "dark blue" };
-    listaEstoque = new JList(selections);
+    listaEstoque = new JList(controle.getItensEstoque());
     listaEstoque.setLayoutOrientation(JList.VERTICAL);
 
     listaEstoqueScroll = new JScrollPane(listaEstoque);

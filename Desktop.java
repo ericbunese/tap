@@ -19,13 +19,13 @@ public class Desktop extends JFrame
    menuVisualizar = new JMenu("Visualizar");
 
    //Itens no primeiro campo da barra
-   itemIngrediente = new JMenuItem("Ingrediente");
+   itemIngrediente = new JMenuItem("Adicionar Ingrediente ao Estoque");
    menuAdicionar.add(itemIngrediente);
    itemReceita = new JMenuItem("Receita");
    menuAdicionar.add(itemReceita);
 
    //Itens no segundo campo da barra
-   itemVisualizarEstoque = new JMenuItem("VisualizarEstoque");
+   itemVisualizarEstoque = new JMenuItem("Visualizar Estoque");
    menuVisualizar.add(itemVisualizarEstoque);
 
    barra.add(menuAdicionar);
