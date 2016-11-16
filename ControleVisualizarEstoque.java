@@ -19,6 +19,7 @@ public class ControleVisualizarEstoque
     {
       System.out.println(i.toString());
       itensEstoque[pos] = i.toString();
+      pos++;
     }
     System.out.println(".");
   }
