@@ -20,7 +20,7 @@ public class DialogoNovoIngrediente extends JInternalFrame
 
     panel = new JPanel();
     getContentPane().add(panel, BorderLayout.CENTER);
-    setSize(100, 100);
+    setSize(300, 300);
     setVisible(true);
 
     labelNome = new JLabel("Ingrediente");
