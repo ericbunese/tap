@@ -1,5 +1,3 @@
-package br.com.marblestudio.tap;
-
 public class ControleEstoque
 {
   private ArrayList<Ingrediente> ingredientes;
@@ -21,6 +19,6 @@ public class ControleEstoque
 
   public void salvarEstoque()
   {
-    
+
   }
 }

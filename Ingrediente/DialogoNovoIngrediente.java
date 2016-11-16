@@ -1,5 +1,3 @@
-package br.com.marblestudio.tap;
-
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;

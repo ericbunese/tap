@@ -1,5 +1,3 @@
-package br.com.marblestudio.tap;
-
 public class ControleNovoIngrediente
 {
   private Ingrediente ingrediente=null;
