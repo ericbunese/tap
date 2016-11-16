@@ -20,21 +20,21 @@ public class DialogoNovoIngrediente extends JInternalFrame
 
     panel = new JPanel();
     getContentPane().add(panel, BorderLayout.CENTER);
-    setSize(300, 300);
-    setVisible(true);
-    panel.setLayout(new FlowLayout());
 
     labelNome = new JLabel("Nome");
-    panel.add(labelNome);
     textFieldNome = new JTextField("");
-    panel.add(textFieldNome);
     labelQuantidade = new JLabel("Quantidade");
-    panel.add(labelQuantidade);
     textFieldQuantidade = new JTextField("1");
-    panel.add(textFieldQuantidade);
-
     botaoOk = new JButton("OK");
+
+    panel.setLayout(new FlowLayout());
+    panel.add(labelNome);
+    panel.add(textFieldNome);
+    panel.add(labelQuantidade);
+    panel.add(textFieldQuantidade);
     panel.add(botaoOk);
+    setSize(300, 300);
+    setVisible(true);
 
     botaoOk.addActionListener(new ActionListener()
     {
