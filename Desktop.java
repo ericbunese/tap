@@ -49,7 +49,7 @@ public class Desktop extends JFrame
      }
    });
 
-   this.setSize(500, 400);
+   this.setSize(1024, 768);
    this.setVisible(true);
 
    addWindowListener(new WindowAdapter()

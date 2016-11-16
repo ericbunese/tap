@@ -2,7 +2,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-class DialogoNovoIngrediente extends JInternalFrame
+public class DialogoNovoIngrediente extends JInternalFrame
 {
   private JLabel labelNome;
   private JTextField textFieldNome;
@@ -20,7 +20,7 @@ class DialogoNovoIngrediente extends JInternalFrame
 
     panel = new JPanel();
     getContentPane().add(panel, BorderLayout.CENTER);
-    setSize(100,100);
+    setSize(512, 384);
     setVisible(true);
 
     labelNome = new JLabel("Ingrediente");
