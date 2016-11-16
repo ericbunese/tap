@@ -4,6 +4,7 @@ import javax.swing.*;
 
 public class DialogoVisualizarEstoque extends JInternalFrame
 {
+  private JScrollPane listaEstoqueScroll;
   private JList listaEstoque;
   private JPanel panel;
   private ControleVisualizarEstoque controle;
@@ -19,15 +20,14 @@ public class DialogoVisualizarEstoque extends JInternalFrame
     panel = new JPanel();
     getContentPane().add(panel, BorderLayout.CENTER);
 
-    listaEstoque = new JList();
+    String[] selections = { "green", "red", "orange", "dark blue" };
+    listaEstoque = new JList(selections);
     listaEstoque.setLayoutOrientation(JList.VERTICAL);
-    listaEstoque.add("TESTE");
-    listaEstoque.add("TESTE");
-    listaEstoque.add("TESTE");
-    listaEstoque.add("TESTE");
-    listaEstoque.add("TESTE");
 
-    panel.add(listaEstoque);
+    listaEstoqueScroll = new JScrollPane(listaEstoque);
+
+    panel.add(listaEstoqueScroll);
+    panel.pack();
 
     setSize(450, 300);
     setVisible(true);
