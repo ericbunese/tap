@@ -51,7 +51,7 @@ public class Ingrediente
     else
     {
       Ingrediente ingrediente = (Ingrediente) object;
-      if (this.nome == ingrediente.getNome())
+      if (this.nome.equals(ingrediente.getNome()))
       {
         result = true;
       }
