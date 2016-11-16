@@ -12,7 +12,7 @@ public class ControleNovoIngrediente
 
   public void criarIngrediente(String nome)
   {
-    if (nome!=null)
+    if (nome!=null && nome!="")
     {
       if (ingrediente==null)
       {
