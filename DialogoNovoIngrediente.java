@@ -33,7 +33,7 @@ public class DialogoNovoIngrediente extends JInternalFrame
     panel.add(labelQuantidade);
     panel.add(textFieldQuantidade);
     panel.add(botaoOk);
-    setSize(300, 300);
+    setSize(450, 300);
     setVisible(true);
 
     botaoOk.addActionListener(new ActionListener()
