@@ -26,7 +26,7 @@ public class ControleNovoIngrediente
     }
   }
 
-  public void salvarIngrediente(Ingrediente ingrediente)
+  public void salvarIngrediente()
   {
     if (ingrediente!=null)
     {
