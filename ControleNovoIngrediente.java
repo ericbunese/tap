@@ -1,3 +1,5 @@
+import javax.swing.JOptionPane;
+
 public class ControleNovoIngrediente
 {
   private Ingrediente ingrediente=null;
@@ -8,7 +10,7 @@ public class ControleNovoIngrediente
     this.controleEstoque = controleEstoque;
   }
 
-  public criarIngrediente(String nome)
+  public void criarIngrediente(String nome)
   {
     if (nome!=null)
     {
@@ -24,7 +26,7 @@ public class ControleNovoIngrediente
     }
   }
 
-  public salvarIngrediente(Ingrediente ingrediente)
+  public void salvarIngrediente(Ingrediente ingrediente)
   {
     if (ingrediente!=null)
     {

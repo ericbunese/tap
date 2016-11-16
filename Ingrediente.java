@@ -1,6 +1,6 @@
 public class Ingrediente
 {
-  private String name;
+  private String nome;
 
   public Ingrediente()
   {

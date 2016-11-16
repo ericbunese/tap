@@ -13,10 +13,11 @@ class DialogoNovoIngrediente extends JInternalFrame
 
   public DialogoNovoIngrediente(ControleEstoque controleEstoque)
   {
+    super("Novo Ingrediente", true, true, true, true );
+
     this.controleEstoque = controleEstoque;
     controle = new ControleNovoIngrediente(controleEstoque);
 
-    super("Novo Ingrediente", true, true, true, true );
     panel = new JPanel();
     getContentPane().add(panel, BorderLayout.CENTER);
     setSize(100,100);
@@ -39,7 +40,6 @@ class DialogoNovoIngrediente extends JInternalFrame
         String nomeIngrediente = textFieldNome.getText();
         controle.criarIngrediente(nomeIngrediente);
         controle.salvarIngrediente();
-        desktop.remove(this);
       }
     });
 
