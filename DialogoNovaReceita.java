@@ -57,7 +57,7 @@ public class DialogoNovaReceita extends JInternalFrame
       {
         int calorias = Integer.parseInt(textFieldCalorias.getText());
         String nomeReceita = textFieldNome.getText();
-        java.util.List<Ingrediente> ingredientes = listaReceitas.getSelectedValuesList();
+        java.util.List<String> ingredientes = listaReceitas.getSelectedValuesList();
         ArrayList<Ingrediente> ingredientesTemp = new ArrayList<Ingrediente>();
 
         String tempName;
