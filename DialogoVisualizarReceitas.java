@@ -12,7 +12,7 @@ public class DialogoVisualizarReceitas extends JInternalFrame
   private DesktopPane desktopPane;
   private JButton botaoOk;
 
-  public DialogoVisualizarEstoque(ControleReceitas controleReceitas, DesktopPane desktopPane)
+  public DialogoVisualizarReceitas(ControleReceitas controleReceitas, DesktopPane desktopPane)
   {
     super("Receitas", true, true, true, true );
 
