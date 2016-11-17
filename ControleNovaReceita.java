@@ -18,8 +18,8 @@ public class ControleNovaReceita
     System.out.println("VISUALIZAR ESTOQUE PARA RECEITAS");
     for (Receita r:receitas)
     {
-      System.out.println(i.toString());
-      itensReceita[pos] = i.toString();
+      System.out.println(r.toString());
+      itensReceita[pos] = r.toString();
       pos++;
     }
     System.out.println(".");

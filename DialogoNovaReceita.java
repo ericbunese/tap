@@ -39,8 +39,8 @@ public class DialogoNovaReceita extends JInternalFrame
     panel.add(listaReceitasScroll);
     panel.add(labelNome);
     panel.add(textFieldNome);
-    panel.add(labelQuantidade);
-    panel.add(textFieldQuantidade);
+    panel.add(labelCalorias);
+    panel.add(textFieldCalorias);
     panel.add(botaoOk);
     setSize(450, 300);
     setVisible(true);
@@ -52,9 +52,9 @@ public class DialogoNovaReceita extends JInternalFrame
       {
         int calorias = Integer.parseInt(textFieldCalorias.getText());
         String nomeReceita = textFieldNome.getText();
-        List<Ingrediente> ingredientes = listaReceitas.getSelectedValuesList();
+        ArrayList<Ingrediente> ingredientes = listaReceitas.getSelectedValuesList();
 
-        controle.criarReceita(nomeIngrediente, calorias, ingredientes);
+        controle.criarReceita(nomeReceita, calorias, ingredientes);
         controle.salvarReceita();
       }
     });

@@ -5,20 +5,20 @@ public class Receita implements java.io.Serializable
 {
   private String nome;
   private int calorias;
-  private List<Ingrediente> ingredientes;
+  private ArrayList<Ingrediente> ingredientes;
 
   public Receita(String nome)
   {
     this.nome = nome;
     calorias = 0;
-    ingredientes = new List<Ingrediente>();
+    ingredientes = new ArrayList<Ingrediente>();
   }
 
   public Receita(String nome, int calorias)
   {
     this.nome = nome;
     this.calorias = calorias;
-    ingredientes = new List<Ingrediente>();
+    ingredientes = new ArrayList<Ingrediente>();
   }
 
   public Receita(String nome, int calorias, List<Ingrediente> ingredientes)
