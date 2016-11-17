@@ -10,11 +10,6 @@ public class Desktop extends JFrame
  private JDesktopPane desktop;
  private ControleEstoque controleEstoque =  new ControleEstoque();
 
-
- private ImageIcon icon = new ImageIcon("images/blue_digital_waves_abstract.jpg");
- private Image image = icon.getImage();
- private Image newimage = image.getScaledInstance(1024, 768, Image.SCALE_SMOOTH);
-
  public Desktop()
  {
    super("Sistema do RU");
@@ -38,7 +33,19 @@ public class Desktop extends JFrame
    setJMenuBar(barra);
 
    //Novo desktop
-   desktop = new JDesktopPane();
+   desktop = new JDesktopPane()
+   {
+    ImageIcon icon = new ImageIcon("backgroundImage.jpg");
+    Image image = icon.getImage();
+    Image newimage = image.getScaledInstance(1024, 768, Image.SCALE_SMOOTH);
+
+    @Override
+    protected void paintComponent(Graphics g)
+    {
+        super.paintComponent(g);
+        g.drawImage(newimage, 0, 0, this);
+    }
+  };
    getContentPane().add(desktop);
 
    itemIngrediente.addActionListener(new ActionListener()
@@ -88,7 +95,7 @@ public class Desktop extends JFrame
  @Override
   protected void paintComponent(Graphics g)
   {
-      super.paintComponent(g);
-      g.drawImage(newimage, 0, 0, this);
+    super.paintComponent(g);
+    g.drawImage(newimage, 0, 0, this);
   }
 }
