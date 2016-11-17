@@ -53,7 +53,7 @@ public class Desktop extends JFrame
    @Override
    public void actionPerformed(ActionEvent e)
    {
-     DialogoNovaReceita dnr = new DialogoNovaReceita(controleReceitas);
+     DialogoNovaReceita dnr = new DialogoNovaReceita(controleReceitas, controleEstoque);
      desktop.add(dnr);
    }
   });
