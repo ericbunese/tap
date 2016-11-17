@@ -25,13 +25,13 @@ public class ControleNovaReceita
     System.out.println(".");
   }
 
-  public void criarReceita(String nome, int calorias, List<Ingrediente> ingredientes)
+  public void criarReceita(String nome, int calorias, java.util.List<Ingrediente> ingredientes)
   {
     if (nome!=null && !nome.equals(""))
     {
       if (receita==null)
       {
-        receita = new Receita(nome, calorias, ingredientes);
+        receita = new Receita(nome, calorias, (ArrayList)ingredientes);
       }
       else
       {
