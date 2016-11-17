@@ -6,9 +6,9 @@ public class ControleNovaReceita
   private Receita receita=null;
   private ControleReceitas controleReceitas;
   private String[] itensReceita;
-  private ArrayList<Receitas> receitas;
+  private ArrayList<Receita> receitas;
 
-  public ControleVisualizarEstoque(ControleReceitas controleReceitas)
+  public ControleNovaReceita(ControleReceitas controleReceitas)
   {
     this.controleReceitas = controleReceitas;
     receitas = controleReceitas.getReceitas();

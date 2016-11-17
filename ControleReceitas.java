@@ -16,7 +16,7 @@ public class ControleReceitas
     if (!receitas.contains(receita))
     {
       receitas.add(receita);
-      System.out.println("Adicionada receita "+ingrediente.getNome());
+      System.out.println("Adicionada receita "+receita.getNome());
     }
   }
 
