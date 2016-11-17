@@ -13,7 +13,7 @@ public class DialogoVisualizarReceita extends JInternalFrame
 
   public DialogoVisualizarReceita(Receita receita)
   {
-    super("Estoque", true, true, true, true );
+    super("Receita", true, true, true, true );
 
     this.receita = receita;
     controle = new ControleVisualizarReceita(receita);
