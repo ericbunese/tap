@@ -63,9 +63,9 @@ public class DialogoNovaReceita extends JInternalFrame
         String tempName;
         Ingrediente igr;
 
-        for (Ingrediente i:ingredientes)
+        for (String s:ingredientes)
         {
-          tempName = i.getNome().split(" ")[1];
+          tempName = s.split(" ")[1];
           System.out.println("Busca por nome: "+tempName);
           igr = controleEstoque.buscarPorNome(tempName);
           if (igr!=null)
