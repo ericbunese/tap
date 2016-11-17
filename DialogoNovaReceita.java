@@ -12,6 +12,7 @@ public class DialogoNovaReceita extends JInternalFrame
   private JList listaReceitas;
   private JPanel panel;
   private ControleNovaReceita controle;
+  private ControleVisualizarEstoque controleVisualizarEstoque;
   private ControleEstoque controleEstoque;
   private ControleReceitas controleReceitas;
 
@@ -22,6 +23,7 @@ public class DialogoNovaReceita extends JInternalFrame
     this.controleReceitas = controleReceitas;
     this.controleEstoque = controleEstoque;
     controle = new ControleNovaReceita(controleReceitas);
+    controleVisualizarEstoque = new ControleVisualizarEstoque(controleEstoque);
 
     panel = new JPanel();
     getContentPane().add(panel, BorderLayout.CENTER);
@@ -32,7 +34,7 @@ public class DialogoNovaReceita extends JInternalFrame
     textFieldCalorias = new JTextField("1");
     botaoOk = new JButton("OK");
 
-    listaReceitas = new JList(controleEstoque.getIngredientes());
+    listaReceitas = new JList(controleVisualizarEstoque.getItensEstoque());
     listaReceitas.setLayoutOrientation(JList.VERTICAL);
 
     listaReceitasScroll = new JScrollPane(listaReceitas);
