@@ -12,7 +12,7 @@ public class DesktopPane extends javax.swing.JDesktopPane
   }
 
   @Override
-  protected void paint(Graphics g)
+  protected void paintComponent(Graphics g)
   {
       super.paintComponent(g);
       g.drawImage(newimage, 0, 0, this);
