@@ -79,11 +79,4 @@ public class Desktop extends JFrame
    }
   });
  }
-
- @Override
-  protected void paintComponent(Graphics g)
-  {
-    super.paintComponent(g);
-    g.drawImage(newimage, 0, 0, this);
-  }
 }
