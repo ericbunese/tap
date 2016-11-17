@@ -1,6 +1,6 @@
 import java.io.*;
 
-public class Ingrediente implements java.io.Serializable;
+public class Ingrediente implements java.io.Serializable
 {
   private String nome;
   private int quantidade;
