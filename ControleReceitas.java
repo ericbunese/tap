@@ -83,4 +83,14 @@ public class ControleReceitas
   {
     return receitas;
   }
+
+  public Receita buscarPorNome(String nome)
+  {
+    for (Receita r:receitas)
+    {
+      if (r.getNome().equals(nome))
+          return r;
+    }
+    return null;
+  }
 }

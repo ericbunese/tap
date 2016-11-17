@@ -6,7 +6,7 @@ public class Desktop extends JFrame
 {
  private JMenuBar barra;
  private JMenu menuAdicionar, menuVisualizar;
- private JMenuItem itemIngrediente, itemReceita, itemVisualizarEstoque;
+ private JMenuItem itemIngrediente, itemReceita, itemVisualizarEstoque, itemVisualizarReceitas;
  private DesktopPane desktop;
  private ControleEstoque controleEstoque =  new ControleEstoque();
  private ControleReceitas controleReceitas = new ControleReceitas();
@@ -28,6 +28,8 @@ public class Desktop extends JFrame
   //Itens no segundo campo da barra
   itemVisualizarEstoque = new JMenuItem("Visualizar Estoque");
   menuVisualizar.add(itemVisualizarEstoque);
+  itemVisualizarReceitas = new JMenuItem("Visualizar Receitas");
+  menuVisualizar.add(itemVisualizarReceitas);
 
   barra.add(menuAdicionar);
   barra.add(menuVisualizar);
@@ -68,6 +70,17 @@ public class Desktop extends JFrame
      desktop.add(dvi);
    }
   });
+
+  itemVisualizarReceitas.addActionListener(new ActionListener()
+  {
+    @Override
+    public void actionPerformed(ActionEvent e)
+    {
+      //Visualizar Receitas
+      DialogoVisualizarReceitas dvr = new DialogoVisualizarReceitas(controleReceitas, desktop);
+      desktop.add(dvr);
+    }
+  })
 
   this.setSize(1024, 768);
   this.setVisible(true);
