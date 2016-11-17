@@ -9,6 +9,7 @@ public class Desktop extends JFrame
  private JMenuItem itemIngrediente, itemReceita, itemVisualizarEstoque;
  private DesktopPane desktop;
  private ControleEstoque controleEstoque =  new ControleEstoque();
+ private ControleReceitas controleReceitas = new ControleReceitas();
 
  public Desktop()
  {
@@ -52,7 +53,8 @@ public class Desktop extends JFrame
    @Override
    public void actionPerformed(ActionEvent e)
    {
-     //Nova Receita.
+     DialogoNovaReceita dnr = new DialogoNovaReceita(controleReceitas);
+     desktop.add(dnr);
    }
   });
 
