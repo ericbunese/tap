@@ -32,7 +32,7 @@ public class DialogoNovaReceita extends JInternalFrame
     textFieldCalorias = new JTextField("1");
     botaoOk = new JButton("OK");
 
-    listaReceitas = new JList(controleEstoque.getItensEstoque());
+    listaReceitas = new JList(controleEstoque.getIngredientes());
     listaReceitas.setLayoutOrientation(JList.VERTICAL);
 
     listaReceitasScroll = new JScrollPane(listaReceitas);
