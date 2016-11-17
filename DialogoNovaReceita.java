@@ -61,15 +61,17 @@ public class DialogoNovaReceita extends JInternalFrame
         ArrayList<Ingrediente> ingredientesTemp = new ArrayList<Ingrediente>();
 
         String tempName;
+        Ingrediente igr;
+
         for (Ingrediente i:ingredientes)
         {
           tempName = i.getNome().split(" ")[1];
-          for (Ingrediente j:controleEstoque.getIngredientes())
+          System.out.println("Busca por nome: "+tempName);
+          igr = controleEstoque.buscarPorNome(tempName);
+          if (igr!=null)
           {
-            if (j.getNome().equals(tempName))
-            {
-              ingredientesTemp.add(j);
-            }
+            ingredientesTemp.add(igr);
+            System.out.println("Adicionado ingrediente "+igr.getNome());
           }
         }
 

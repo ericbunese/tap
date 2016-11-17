@@ -95,4 +95,14 @@ public class ControleEstoque
   {
     return ingredientes;
   }
+
+  public Ingrediente buscarPorNome(String nome)
+  {
+    for (Ingrediente i:ingredientes)
+    {
+      if (i.getNome().equals(nome))
+          return i;
+    }
+    return null;
+  }
 }
