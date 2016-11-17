@@ -12,29 +12,29 @@ public class Desktop extends JFrame
 
  public Desktop()
  {
-   super("Sistema do RU");
-   //Barra superior
-   barra = new JMenuBar();
-   menuAdicionar = new JMenu("Adicionar");
-   menuVisualizar = new JMenu("Visualizar");
+  super("Sistema do RU");
+  //Barra superior
+  barra = new JMenuBar();
+  menuAdicionar = new JMenu("Adicionar");
+  menuVisualizar = new JMenu("Visualizar");
 
-   //Itens no primeiro campo da barra
-   itemIngrediente = new JMenuItem("Adicionar Ingrediente ao Estoque");
-   menuAdicionar.add(itemIngrediente);
-   itemReceita = new JMenuItem("Receita");
-   menuAdicionar.add(itemReceita);
+  //Itens no primeiro campo da barra
+  itemIngrediente = new JMenuItem("Adicionar Ingrediente ao Estoque");
+  menuAdicionar.add(itemIngrediente);
+  itemReceita = new JMenuItem("Receita");
+  menuAdicionar.add(itemReceita);
 
-   //Itens no segundo campo da barra
-   itemVisualizarEstoque = new JMenuItem("Visualizar Estoque");
-   menuVisualizar.add(itemVisualizarEstoque);
+  //Itens no segundo campo da barra
+  itemVisualizarEstoque = new JMenuItem("Visualizar Estoque");
+  menuVisualizar.add(itemVisualizarEstoque);
 
-   barra.add(menuAdicionar);
-   barra.add(menuVisualizar);
-   setJMenuBar(barra);
+  barra.add(menuAdicionar);
+  barra.add(menuVisualizar);
+  setJMenuBar(barra);
 
-   //Novo desktop
-   desktop = new JDesktopPane()
-   {
+  //Novo desktop
+  desktop = new javax.swing.JDesktopPane()
+  {
     ImageIcon icon = new ImageIcon("backgroundImage.jpg");
     Image image = icon.getImage();
     Image newimage = image.getScaledInstance(1024, 768, Image.SCALE_SMOOTH);
