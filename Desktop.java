@@ -7,7 +7,7 @@ public class Desktop extends JFrame
  private JMenuBar barra;
  private JMenu menuAdicionar, menuVisualizar;
  private JMenuItem itemIngrediente, itemReceita, itemVisualizarEstoque;
- private JDesktopPane desktop;
+ private DesktopPane desktop;
  private ControleEstoque controleEstoque =  new ControleEstoque();
 
  public Desktop()

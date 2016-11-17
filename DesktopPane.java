@@ -1,4 +1,5 @@
-import javax.swing.JDesktopPane;
+import java.awt.*;
+import javax.swing.*;
 
 public class DesktopPane extends javax.swing.JDesktopPane
 {
@@ -11,7 +12,7 @@ public class DesktopPane extends javax.swing.JDesktopPane
   }
 
   @Override
-  protected void paintComponent(Graphics g)
+  protected void paint(Graphics g)
   {
       super.paintComponent(g);
       g.drawImage(newimage, 0, 0, this);
