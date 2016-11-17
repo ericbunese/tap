@@ -33,62 +33,50 @@ public class Desktop extends JFrame
   setJMenuBar(barra);
 
   //Novo desktop
-  desktop = new javax.swing.JDesktopPane()
+  desktop = new DesktopPane();
+  getContentPane().add(desktop);
+
+  itemIngrediente.addActionListener(new ActionListener()
   {
-    ImageIcon icon = new ImageIcon("backgroundImage.jpg");
-    Image image = icon.getImage();
-    Image newimage = image.getScaledInstance(1024, 768, Image.SCALE_SMOOTH);
-
-    @Override
-    protected void paintComponent(Graphics g)
-    {
-        super.paintComponent(g);
-        g.drawImage(newimage, 0, 0, this);
-    }
-  };
-   getContentPane().add(desktop);
-
-   itemIngrediente.addActionListener(new ActionListener()
+   @Override
+   public void actionPerformed(ActionEvent e)
    {
-     @Override
-     public void actionPerformed(ActionEvent e)
-     {
-       //Novo Ingrediente
-       DialogoNovoIngrediente dni = new DialogoNovoIngrediente(controleEstoque);
-       desktop.add(dni);
-     }
-   });
+     //Novo Ingrediente
+     DialogoNovoIngrediente dni = new DialogoNovoIngrediente(controleEstoque);
+     desktop.add(dni);
+   }
+  });
 
-   itemReceita.addActionListener(new ActionListener()
+  itemReceita.addActionListener(new ActionListener()
+  {
+   @Override
+   public void actionPerformed(ActionEvent e)
    {
-     @Override
-     public void actionPerformed(ActionEvent e)
-     {
-       //Nova Receita.
-     }
-   });
+     //Nova Receita.
+   }
+  });
 
-   itemVisualizarEstoque.addActionListener(new ActionListener()
+  itemVisualizarEstoque.addActionListener(new ActionListener()
+  {
+   @Override
+   public void actionPerformed(ActionEvent e)
    {
-     @Override
-     public void actionPerformed(ActionEvent e)
-     {
-       //Visualizar Estoque
-       DialogoVisualizarEstoque dvi = new DialogoVisualizarEstoque(controleEstoque);
-       desktop.add(dvi);
-     }
-   });
+     //Visualizar Estoque
+     DialogoVisualizarEstoque dvi = new DialogoVisualizarEstoque(controleEstoque);
+     desktop.add(dvi);
+   }
+  });
 
-   this.setSize(1024, 768);
-   this.setVisible(true);
+  this.setSize(1024, 768);
+  this.setVisible(true);
 
-   addWindowListener(new WindowAdapter()
+  addWindowListener(new WindowAdapter()
+  {
+   public void windowClosing( WindowEvent e )
    {
-     public void windowClosing( WindowEvent e )
-     {
-       controleEstoque.salvarEstoque();
-       System.exit(0);
-     }
+     controleEstoque.salvarEstoque();
+     System.exit(0);
+   }
   });
  }
 
