@@ -14,7 +14,7 @@ public class ControleVisualizarReceitas
 
     int pos = 0;
     itensReceitas = new String[receitas.size()];
-    System.out.println("VISUALIZAR ESTOQUE");
+    System.out.println("VISUALIZAR RECEITAS");
     for (Receita r:receitas)
     {
       System.out.println(r.toString());

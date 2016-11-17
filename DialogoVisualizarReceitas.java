@@ -40,7 +40,7 @@ public class DialogoVisualizarReceitas extends JInternalFrame
       @Override
       public void actionPerformed(ActionEvent e)
       {
-        String nome = listaReceitas.getSelectedValue();
+        String nome = listaReceitas.getSelectedValue().toString();
         Receita r = controleReceitas.buscarPorNome(nome);
         if (r!=null)
         {

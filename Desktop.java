@@ -80,7 +80,7 @@ public class Desktop extends JFrame
       DialogoVisualizarReceitas dvr = new DialogoVisualizarReceitas(controleReceitas, desktop);
       desktop.add(dvr);
     }
-  })
+  });
 
   this.setSize(1024, 768);
   this.setVisible(true);
