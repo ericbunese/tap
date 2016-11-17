@@ -53,8 +53,14 @@ public class DialogoNovaReceita extends JInternalFrame
         int calorias = Integer.parseInt(textFieldCalorias.getText());
         String nomeReceita = textFieldNome.getText();
         java.util.List<Ingrediente> ingredientes = listaReceitas.getSelectedValuesList();
+        ArrayList<Ingrediente> ingredientesTemp = new ArrayList<Ingrediente>();
 
-        controle.criarReceita(nomeReceita, calorias, ingredientes);
+        for (Ingrediente i:ingredientes)
+        {
+          ingredientesTemp.add(i);
+        }
+
+        controle.criarReceita(nomeReceita, calorias, ingredientesTemp);
         controle.salvarReceita();
       }
     });
