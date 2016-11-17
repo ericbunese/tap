@@ -21,7 +21,7 @@ public class Receita implements java.io.Serializable
     ingredientes = new ArrayList<Ingrediente>();
   }
 
-  public Receita(String nome, int calorias, List<Ingrediente> ingredientes)
+  public Receita(String nome, int calorias, ArrayList<Ingrediente> ingredientes)
   {
     this.nome = nome;
     this.calorias = calorias;
@@ -48,7 +48,7 @@ public class Receita implements java.io.Serializable
     this.calorias = calorias;
   }
 
-  public void setIngredientes(List<Ingrediente> ingredientes)
+  public void setIngredientes(ArrayList<Ingrediente> ingredientes)
   {
     this.ingredientes = ingredientes;
   }
@@ -79,7 +79,7 @@ public class Receita implements java.io.Serializable
     else
     {
       Receita receita = (Receita) object;
-      if (this.nome.equals(ingrediente.getNome()) && this.calorias == receita.calorias)
+      if (this.nome.equals(receita.getNome()) && this.calorias == receita.calorias)
       {
         result = true;
       }

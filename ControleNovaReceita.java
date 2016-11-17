@@ -48,7 +48,7 @@ public class ControleNovaReceita
     if (receita!=null)
     {
       controleReceitas.incluirReceita(receita);
-      controleEstoque.salvarReceitas();
+      controleReceitas.salvarReceitas();
       System.out.println("Receita adicionada.");
       receita = null;
     }
