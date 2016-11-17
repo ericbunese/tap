@@ -24,12 +24,12 @@ public class DialogoVisualizarReceita extends JInternalFrame
     nomeReceita = new JLabel("Nome: "+receita.getNome());
     caloriasReceita = new JLabel("Calorias: "+String.valueOf(receita.getCalorias()));
 
-    listaEstoque = new JList(controle.getIngredientes());
-    listaEstoque.setLayoutOrientation(JList.VERTICAL);
+    listaIngredientes = new JList(controle.getIngredientes());
+    listaIngredientes.setLayoutOrientation(JList.VERTICAL);
 
-    listaEstoqueScroll = new JScrollPane(listaEstoque);
+    listaIngredientesScroll = new JScrollPane(listaIngredientes);
 
-    panel.add(listaEstoqueScroll);
+    panel.add(listaIngredientesScroll);
     panel.add(nomeReceita);
     panel.add(caloriasReceita);
 
