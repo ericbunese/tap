@@ -36,6 +36,7 @@ public class DialogoNovaReceita extends JInternalFrame
 
     listaReceitas = new JList(controleVisualizarEstoque.getItensEstoque());
     listaReceitas.setLayoutOrientation(JList.VERTICAL);
+    listaReceitas.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
     listaReceitasScroll = new JScrollPane(listaReceitas);
 
@@ -59,9 +60,17 @@ public class DialogoNovaReceita extends JInternalFrame
         java.util.List<Ingrediente> ingredientes = listaReceitas.getSelectedValuesList();
         ArrayList<Ingrediente> ingredientesTemp = new ArrayList<Ingrediente>();
 
+        String tempName;
         for (Ingrediente i:ingredientes)
         {
-          ingredientesTemp.add(i);
+          tempName = i.getNome().split(" ")[1];
+          for (Ingrediente j:controleEstoque.getIngredientes())
+          {
+            if (j.getNome().equals(tempName))
+            {
+              ingredientesTemp.add(j);
+            }
+          }
         }
 
         controle.criarReceita(nomeReceita, calorias, ingredientesTemp);

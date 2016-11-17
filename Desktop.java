@@ -77,6 +77,7 @@ public class Desktop extends JFrame
    public void windowClosing( WindowEvent e )
    {
      controleEstoque.salvarEstoque();
+     controleReceitas.salvarReceitas();
      System.exit(0);
    }
   });
