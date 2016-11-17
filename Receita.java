@@ -53,7 +53,7 @@ public class Receita implements java.io.Serializable
     this.ingredientes = ingredientes;
   }
 
-  public List<Ingrediente> getIngredientes()
+  public ArrayList<Ingrediente> getIngredientes()
   {
     return ingredientes;
   }

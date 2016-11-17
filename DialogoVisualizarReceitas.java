@@ -44,6 +44,8 @@ public class DialogoVisualizarReceitas extends JInternalFrame
         Receita r = controleReceitas.buscarPorNome(nome);
         if (r!=null)
         {
+          DialogoVisualizarReceita dvr = new DialogoVisualizarReceita(r);
+          desktopPane.add(dvr);
           System.out.println(r.toString());
         }
       }
