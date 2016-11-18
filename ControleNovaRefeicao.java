@@ -49,7 +49,9 @@ public class ControleNovaRefeicao
     if (refeicao!=null)
     {
       //@mostrar refeição
-      System.out.println(refeicao.toString());
+      String info = refeicao.imprimir();
+      JOptionPane.showMessageDialog(null, info);
+      System.out.println(info);
       System.out.println("Refeicao impressa.");
       refeicao = null;
     }

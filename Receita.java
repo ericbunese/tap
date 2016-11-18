@@ -9,7 +9,7 @@ public class Receita implements java.io.Serializable
 
   public Receita()
   {
-    
+
   }
 
   public Receita(String nome)
@@ -71,6 +71,20 @@ public class Receita implements java.io.Serializable
       ingrs+=i.toString()+";";
     }
     return String.valueOf(calorias)+"kcal:"+nome+": "+ingrs;
+  }
+
+  public String imprimir(int quantidadePessoas)
+  {
+    String master = "Receita "+getNome()+". Calorias: "+getCalorias()+"\n";
+    int quantidade;
+    master+="===================\nIngredientes:";
+    for(Ingrediente i: ingredientes)
+    {
+      quantidade = i.getQuantidade()*quantidadePessoas;
+      master+=i.getNome()+":   "+quantidade;
+    }
+
+    return master;
   }
 
   @Override

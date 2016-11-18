@@ -68,6 +68,17 @@ public class Refeicao
     return String.valueOf(quantidadePessoas)+". "+nome+" - "+recs;
   }
 
+  public String imprimir()
+  {
+    String master = "Refeição "+getNome()+". Para: "+getQuantidadePessoas()+" pessoas.\n\n";
+    master+="==========\nReceitas:\n";
+    for (Receita r:receitas)
+    {
+      master += r.imprimir(getQuantidadePessoas())+"\n";
+    }
+    return master;
+  }
+
   @Override
   public boolean equals(Object object)
   {
