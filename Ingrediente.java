@@ -73,7 +73,7 @@ public class Ingrediente implements java.io.Serializable
     else
     {
       Ingrediente ingrediente = (Ingrediente) object;
-      if (this.nome.equals(ingrediente.getNome()) && this.unidade.equals(ingrediente.getUnidade()))
+      if (this.nome.equals(ingrediente.getNome()))
       {
         result = true;
       }

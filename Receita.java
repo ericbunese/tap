@@ -7,6 +7,11 @@ public class Receita implements java.io.Serializable
   private int calorias;
   private ArrayList<Ingrediente> ingredientes;
 
+  public Receita()
+  {
+    
+  }
+
   public Receita(String nome)
   {
     this.nome = nome;

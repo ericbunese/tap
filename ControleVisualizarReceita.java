@@ -17,8 +17,8 @@ public class ControleVisualizarReceita
     System.out.println("VISUALIZAR INGREDIENTES DA RECEITA");
     for (Ingrediente i:ingredientes)
     {
-      System.out.println(i.getNome());
-      itensIngredientes[pos] = i.getNome();
+      System.out.println(i.getQuantidade()+i.getUnidade()+". "+i.getNome());
+      itensIngredientes[pos] = i.getQuantidade()+i.getUnidade()+". "+i.getNome();
       pos++;
     }
     System.out.println(".");

@@ -5,9 +5,9 @@ import javax.swing.*;
 
 public class DialogoNovaReceita extends JInternalFrame
 {
-  private JLabel labelNome, labelCalorias;
-  private JTextField textFieldNome, textFieldCalorias;
-  private JButton botaoOk;
+  private JLabel labelNome, labelCalorias, labelQuantidade, labelUnidade;
+  private JTextField textFieldNome, textFieldCalorias, textFieldQuantidade;
+  private JButton botaoOk, botaoQuantidade;
   private JScrollPane listaReceitasScroll;
   private JList listaReceitas;
   private JPanel panel;
@@ -22,7 +22,7 @@ public class DialogoNovaReceita extends JInternalFrame
 
     this.controleReceitas = controleReceitas;
     this.controleEstoque = controleEstoque;
-    controle = new ControleNovaReceita(controleReceitas);
+    controle = new ControleNovaReceita(controleReceitas, controleEstoque);
     controleVisualizarEstoque = new ControleVisualizarEstoque(controleEstoque);
 
     panel = new JPanel();
@@ -32,6 +32,10 @@ public class DialogoNovaReceita extends JInternalFrame
     textFieldNome = new JTextField("Nome da Receita");
     labelCalorias = new JLabel("Calorias");
     textFieldCalorias = new JTextField("1");
+    labelQuantidade = new JLabel("Quantidade");
+    textFieldQuantidade = new JTextField("1");
+    labelUnidade = new JLabel("unidades");
+    botaoQuantidade = new JButton("Definir Quantidade");
     botaoOk = new JButton("OK");
 
     listaReceitas = new JList(controleVisualizarEstoque.getItensEstoque());
@@ -46,9 +50,36 @@ public class DialogoNovaReceita extends JInternalFrame
     panel.add(textFieldNome);
     panel.add(labelCalorias);
     panel.add(textFieldCalorias);
+    panel.add(labelQuantidade);
+    panel.add(textFieldQuantidade);
+    panel.add(labelUnidade);
+    panel.add(botaoQuantidade);
     panel.add(botaoOk);
     setSize(450, 300);
     setVisible(true);
+
+    botaoQuantidade.addActionListener(new ActionListener()
+    {
+      @Override
+      public void actionPerformed(ActionEvent e)
+      {
+        String nome;
+        java.util.List<String> ingredientesString = listaReceitas.getSelectedValuesList();
+        for (String s:ingredientesString)
+        {
+          nome = s.split(" ")[1];
+          int quantidade = Integer.parseInt(textFieldQuantidade.getText());
+          System.out.println("Nome: "+nome+". Quantidade: "+quantidade);
+          Ingrediente i = controle.buscarPorNome(nome);
+          if (i!=null)
+          {
+            i.setQuantidade(quantidade);
+          }
+        }
+        DefaultListModel model = controle.atualizarQuantidades();
+        listaReceitas.setModel(model);
+      }
+    });
 
     botaoOk.addActionListener(new ActionListener()
     {
@@ -57,24 +88,25 @@ public class DialogoNovaReceita extends JInternalFrame
       {
         int calorias = Integer.parseInt(textFieldCalorias.getText());
         String nomeReceita = textFieldNome.getText();
-        java.util.List<String> ingredientes = listaReceitas.getSelectedValuesList();
-        ArrayList<Ingrediente> ingredientesTemp = new ArrayList<Ingrediente>();
+        java.util.List<String> ingredientesString = listaReceitas.getSelectedValuesList();
+        ArrayList<Ingrediente> ingredientes = new ArrayList<Ingrediente>();
 
         String tempName;
         Ingrediente igr;
 
-        for (String s:ingredientes)
+        for (String s:ingredientesString)
         {
           tempName = s.split(" ")[1];
-          igr = controleEstoque.buscarPorNome(tempName);
+          igr = controle.buscarPorNome(tempName);
           if (igr!=null)
           {
-            ingredientesTemp.add(igr);
+            ingredientes.add(igr);
             System.out.println("Adicionado ingrediente "+igr.getNome());
           }
         }
 
-        controle.criarReceita(nomeReceita, calorias, ingredientesTemp);
+        controle.criarReceita(nomeReceita, calorias);
+        controle.setIngredientes(ingredientes);
         controle.salvarReceita();
       }
     });
