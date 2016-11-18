@@ -3,11 +3,13 @@ import java.io.*;
 public class Ingrediente implements java.io.Serializable
 {
   private String nome;
+  private String unidade;
   private int quantidade;
 
   public Ingrediente(String nome)
   {
     this.nome = nome;
+    this.unidade = "unidades";
     quantidade = 1;
   }
 
@@ -15,6 +17,14 @@ public class Ingrediente implements java.io.Serializable
   {
     this.nome = nome;
     this.quantidade = quantidade;
+    this.unidade = "unidades";
+  }
+
+  public Ingrediente(String nome, int quantidade, String unidade)
+  {
+    this.nome = nome;
+    this.quantidade = quantidade;
+    this.unidade = unidade;
   }
 
   public String getNome()
@@ -37,9 +47,19 @@ public class Ingrediente implements java.io.Serializable
     this.quantidade = quantidade;
   }
 
+  public String getUnidade()
+  {
+    return unidade;
+  }
+
+  public void setUnidade(String unidade)
+  {
+    this.unidade = unidade;
+  }
+
   public String toString()
   {
-    return String.valueOf(quantidade)+". "+nome;
+    return String.valueOf(quantidade)+unidade+" "+nome;
   }
 
   @Override
@@ -53,7 +73,7 @@ public class Ingrediente implements java.io.Serializable
     else
     {
       Ingrediente ingrediente = (Ingrediente) object;
-      if (this.nome.equals(ingrediente.getNome()))
+      if (this.nome.equals(ingrediente.getNome()) && this.unidade.equals(ingrediente.getUnidade()))
       {
         result = true;
       }

@@ -65,7 +65,7 @@ public class Receita implements java.io.Serializable
     {
       ingrs+=i.toString()+";";
     }
-    return String.valueOf(calorias)+". "+nome+" - "+ingrs;
+    return String.valueOf(calorias)+"kcal:"+nome+": "+ingrs;
   }
 
   @Override

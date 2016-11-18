@@ -4,8 +4,8 @@ import javax.swing.*;
 
 public class DialogoNovoIngrediente extends JInternalFrame
 {
-  private JLabel labelNome, labelQuantidade;
-  private JTextField textFieldNome, textFieldQuantidade;
+  private JLabel labelNome, labelQuantidade, labelUnidade;
+  private JTextField textFieldNome, textFieldQuantidade, textFieldUnidade;
   private JButton botaoOk;
   private JPanel panel;
   private ControleNovoIngrediente controle;
@@ -25,6 +25,8 @@ public class DialogoNovoIngrediente extends JInternalFrame
     textFieldNome = new JTextField("Nome do Ingrediente");
     labelQuantidade = new JLabel("Quantidade");
     textFieldQuantidade = new JTextField("1");
+    labelUnidade = new JLabel("Unidade");
+    textFieldUnidade = new JTextField("unidades");
     botaoOk = new JButton("OK");
 
     panel.setLayout(new FlowLayout());
@@ -32,6 +34,8 @@ public class DialogoNovoIngrediente extends JInternalFrame
     panel.add(textFieldNome);
     panel.add(labelQuantidade);
     panel.add(textFieldQuantidade);
+    panel.add(labelUnidade);
+    panel.add(textFieldUnidade);
     panel.add(botaoOk);
     setSize(450, 300);
     setVisible(true);
@@ -43,12 +47,10 @@ public class DialogoNovoIngrediente extends JInternalFrame
       {
         int quantidade = Integer.parseInt(textFieldQuantidade.getText());
         String nomeIngrediente = textFieldNome.getText();
+        String unidade = textFieldUnidade.getText();
 
-        for (int i=0;i<quantidade;++i)
-        {
-          controle.criarIngrediente(nomeIngrediente);
-          controle.salvarIngrediente();
-        }
+        controle.criarIngrediente(nomeIngrediente, quantidade, unidade);
+        controle.salvarIngrediente();
       }
     });
 

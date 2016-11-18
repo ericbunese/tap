@@ -10,17 +10,19 @@ public class ControleNovoIngrediente
     this.controleEstoque = controleEstoque;
   }
 
-  public void criarIngrediente(String nome)
+  public void criarIngrediente(String nome, int quantidade, String unidade)
   {
     if (nome!=null && !nome.equals(""))
     {
       if (ingrediente==null)
       {
-        ingrediente = new Ingrediente(nome);
+        ingrediente = new Ingrediente(nome, quantidade, unidade);
       }
       else
       {
         ingrediente.setNome(nome);
+        ingrediente.setQuantidade(quantidade);
+        ingrediente.setUnidade(unidade);
       }
       System.out.println("Novo Ingrediente: "+nome+" criado");
     }
