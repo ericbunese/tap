@@ -35,10 +35,11 @@ public class ControleNovaReceita
     System.out.println(".");
   }
 
-  public void criarReceita(String nome, int calorias)
+  public void criarReceita(String nome, int calorias, String modoPreparo)
   {
     receita.setNome(nome);
     receita.setCalorias(calorias);
+    receita.setModoPreparo(modoPreparo);
   }
 
   public void salvarReceita()

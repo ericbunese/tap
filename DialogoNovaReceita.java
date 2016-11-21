@@ -5,10 +5,11 @@ import javax.swing.*;
 
 public class DialogoNovaReceita extends JInternalFrame
 {
-  private JLabel labelNome, labelCalorias, labelQuantidade, labelUnidade;
+  private JLabel labelNome, labelCalorias, labelQuantidade, labelUnidade, labelModoPreparo;
   private JTextField textFieldNome, textFieldCalorias, textFieldQuantidade;
   private JButton botaoOk, botaoQuantidade;
-  private JScrollPane listaReceitasScroll;
+  private JScrollPane listaReceitasScroll, modoPreparoScroll;
+  private JTextArea modoPreparo;
   private JList listaReceitas;
   private JPanel panel;
   private ControleNovaReceita controle;
@@ -36,6 +37,9 @@ public class DialogoNovaReceita extends JInternalFrame
     textFieldQuantidade = new JTextField("1");
     labelUnidade = new JLabel("unidades");
     botaoQuantidade = new JButton("Definir Quantidade");
+    labelModoPreparo = new JLabel("Modo Preparo");
+    modoPreparo = new JTextArea(5, 40);
+    modoPreparoScroll = new JScrollPane(modoPreparo);
     botaoOk = new JButton("OK");
 
     listaReceitas = new JList(controleVisualizarEstoque.getItensEstoque());
@@ -54,8 +58,10 @@ public class DialogoNovaReceita extends JInternalFrame
     panel.add(textFieldQuantidade);
     panel.add(labelUnidade);
     panel.add(botaoQuantidade);
+    panel.add(labelModoPreparo);
+    panel.add(modoPreparoScroll);
     panel.add(botaoOk);
-    setSize(450, 300);
+    setSize(600, 400);
     setVisible(true);
 
     botaoQuantidade.addActionListener(new ActionListener()
@@ -90,6 +96,7 @@ public class DialogoNovaReceita extends JInternalFrame
         String nomeReceita = textFieldNome.getText();
         java.util.List<String> ingredientesString = listaReceitas.getSelectedValuesList();
         ArrayList<Ingrediente> ingredientes = new ArrayList<Ingrediente>();
+        String preparo = modoPreparo.getText();
 
         String tempName;
         Ingrediente igr;
@@ -105,7 +112,7 @@ public class DialogoNovaReceita extends JInternalFrame
           }
         }
 
-        controle.criarReceita(nomeReceita, calorias);
+        controle.criarReceita(nomeReceita, calorias, preparo);
         controle.setIngredientes(ingredientes);
         controle.salvarReceita();
       }

@@ -5,6 +5,7 @@ public class Receita implements java.io.Serializable
 {
   private String nome;
   private int calorias;
+  private String modoPreparo;
   private ArrayList<Ingrediente> ingredientes;
 
   public Receita()
@@ -17,6 +18,7 @@ public class Receita implements java.io.Serializable
     this.nome = nome;
     calorias = 0;
     ingredientes = new ArrayList<Ingrediente>();
+    this.modoPreparo = "";
   }
 
   public Receita(String nome, int calorias)
@@ -24,6 +26,7 @@ public class Receita implements java.io.Serializable
     this.nome = nome;
     this.calorias = calorias;
     ingredientes = new ArrayList<Ingrediente>();
+    this.modoPreparo = "";
   }
 
   public Receita(String nome, int calorias, ArrayList<Ingrediente> ingredientes)
@@ -31,6 +34,15 @@ public class Receita implements java.io.Serializable
     this.nome = nome;
     this.calorias = calorias;
     this.ingredientes = ingredientes;
+    this.modoPreparo = "";
+  }
+
+  public Receita(String nome, int calorias, ArrayList<Ingrediente> ingredientes, String modoPreparo)
+  {
+    this.nome = nome;
+    this.calorias = calorias;
+    this.ingredientes = ingredientes;
+    this.modoPreparo = modoPreparo;
   }
 
   public String getNome()
@@ -63,6 +75,16 @@ public class Receita implements java.io.Serializable
     return ingredientes;
   }
 
+  public String getModoPreparo()
+  {
+    return this.modoPreparo;
+  }
+
+  public void setModoPreparo(String modoPreparo)
+  {
+    this.modoPreparo = modoPreparo;
+  }
+
   public String toString()
   {
     String ingrs = "";
@@ -77,7 +99,7 @@ public class Receita implements java.io.Serializable
   {
     String master = "Receita "+getNome()+". Calorias: "+getCalorias()+"\n";
     int quantidade;
-    master+="===================\nIngredientes:";
+    master+="...................\nIngredientes:";
     for(Ingrediente i: ingredientes)
     {
       quantidade = i.getQuantidade()*quantidadePessoas;

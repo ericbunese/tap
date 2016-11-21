@@ -4,8 +4,9 @@ import javax.swing.*;
 
 public class DialogoVisualizarReceita extends JInternalFrame
 {
-  private JLabel nomeReceita, caloriasReceita;
-  private JScrollPane listaIngredientesScroll;
+  private JLabel nomeReceita, caloriasReceita, labelModoPreparo;
+  private JScrollPane listaIngredientesScroll, modoPreparoScroll;
+  private JTextArea modoPreparo;
   private JList listaIngredientes;
   private JPanel panel;
   private ControleVisualizarReceita controle;
@@ -29,11 +30,19 @@ public class DialogoVisualizarReceita extends JInternalFrame
 
     listaIngredientesScroll = new JScrollPane(listaIngredientes);
 
+    labelModoPreparo = new JLabel("Modo Preparo");
+    modoPreparo = new JTextArea(5, 40);
+    modoPreparo.setEditable(false);
+    modoPreparo.setText(receita.getModoPreparo());
+    modoPreparoScroll = new JScrollPane(modoPreparo);
+
     panel.add(listaIngredientesScroll);
     panel.add(nomeReceita);
     panel.add(caloriasReceita);
+    panel.add(labelModoPreparo);
+    panel.add(modoPreparoScroll);
 
-    setSize(450, 300);
+    setSize(600, 400);
     setVisible(true);
   }
 }
